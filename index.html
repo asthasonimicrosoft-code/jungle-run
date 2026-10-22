@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jungle Dash — Endless Runner</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="game-shell">
+    <canvas id="gameCanvas" aria-label="Jungle Dash endless runner game"></canvas>
+
+    <header class="hud">
+      <div class="brand">
+        <div class="brand-mark">⚡</div>
+        <div><span class="eyebrow">ENDLESS RUNNER</span><strong>JUNGLE <em>DASH</em></strong></div>
+      </div>
+      <div class="stats">
+        <div class="stat"><span>DISTANCE</span><strong id="distance">0 m</strong></div>
+        <div class="stat"><span>COINS</span><strong id="coins">0</strong></div>
+        <div class="stat"><span>BEST</span><strong id="best">0 m</strong></div>
+      </div>
+      <button class="sound-btn" id="soundBtn" title="Toggle sound" aria-label="Toggle sound">♫</button>
+    </header>
+
+    <section class="overlay" id="startScreen">
+      <div class="panel">
+        <div class="game-icon">🏃</div>
+        <p class="kicker">THE JUNGLE IS CALLING</p>
+        <h1>RUN FOR<br><span>THE GOLD.</span></h1>
+        <p class="intro">Dodge ancient traps, leap over fallen logs, and collect every coin on your path.</p>
+        <button class="primary-btn" id="startBtn">START RUN <span>➜</span></button>
+        <div class="controls-hint"><span>↑ / SPACE</span> JUMP <i></i> <span>↓</span> SLIDE <i></i> <span>← →</span> MOVE</div>
+      </div>
+    </section>
+
+    <section class="overlay hidden" id="gameOverScreen">
+      <div class="panel compact">
+        <p class="kicker">RUN COMPLETE</p>
+        <h2>YOU'VE BEEN<br><span>CAUGHT!</span></h2>
+        <div class="result-grid">
+          <div><span>DISTANCE</span><strong id="finalDistance">0 m</strong></div>
+          <div><span>COINS COLLECTED</span><strong id="finalCoins">0</strong></div>
+        </div>
+        <button class="primary-btn" id="restartBtn">RUN AGAIN <span>↻</span></button>
+        <p class="small-note">Tip: switch lanes early to avoid surprises.</p>
+      </div>
+    </section>
+
+    <div class="toast" id="toast">READY, RUNNER?</div>
+    <div class="mobile-controls">
+      <button data-action="left" aria-label="Move left">◀</button>
+      <button data-action="jump" aria-label="Jump">▲</button>
+      <button data-action="slide" aria-label="Slide">▼</button>
+      <button data-action="right" aria-label="Move right">▶</button>
+    </div>
+    <footer><span>JUNGLE DASH</span><span>AN ORIGINAL ENDLESS RUNNER</span></footer>
+  </main>
+  <script src="game.js"></script>
+</body>
+</html>
